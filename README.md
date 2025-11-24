@@ -1,7 +1,7 @@
-# Chrome Extension: BookMark Custom & Tab Group Manager
+# Chrome Extension: Chrome Helper Tool
 
 ## Giới thiệu
-Đây là một Chrome Extension giúp người dùng quản lý bookmark và nhóm tab một cách dễ dàng, trực quan và tùy biến. Extension này bao gồm hai chức năng chính:
+Đây là một Chrome Extension hỗ trợ người dùng trên trình duyệt. Extension này bao gồm chức năng chính:
 
 1. **BookMark Custom**  
    - Cho phép lưu và sắp xếp bookmark theo ý muốn.  
