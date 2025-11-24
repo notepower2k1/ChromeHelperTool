@@ -40,7 +40,6 @@
 }
 
 .website-item.list-mode {
-    width: 100%;                        /* full chiều ngang */
     height: auto;                       /* không khóa chiều cao */
     display: flex;
     align-items: center;

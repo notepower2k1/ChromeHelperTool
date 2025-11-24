@@ -53,6 +53,9 @@ function renderTabList(tabs, box, mode = "grid") {
     tabs.forEach(tab => {
         const item = document.createElement("div");
         item.className = `tab-item ${mode === "list" ? "list-mode" : "grid-mode"}`;
+
+        if (tab.active) item.classList.add("active");
+
         item.dataset.url = tab.url;
         item.title = tab.title || tab.url;
         item.dataset.tabId = tab.id; // cần cho drag

@@ -36,7 +36,6 @@
 }
 
 .tab-item.list-mode {
-    width: 100%;
     /* full chiều ngang */
     height: auto;
     /* không khóa chiều cao */
@@ -63,6 +62,13 @@
     outline: 1px solid #ff9800;
     background: rgba(255, 152, 0, 0.15);
     transition: background 0.2s;
+}
+
+.tab-item.active {
+    outline: 1px solid #ff9800;
+    background: rgba(0, 255, 128, 0.15);
+    transition: background 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 .tab-list.delete-mode .tab-item {
