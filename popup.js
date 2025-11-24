@@ -1,0 +1,46 @@
+const tabs = document.querySelectorAll(".tab-btn");
+const contents = document.querySelectorAll(".tab-content");
+
+// Hiển thị Bookmark mặc định
+document.getElementById("tabmanager-container").classList.remove("hidden");
+
+// Mặc định hiển thị bookmark
+tabs.forEach(tab => {
+    if (tab.dataset.tab === "tabmanager") tab.classList.add("active");
+});
+
+// Lazy load module ngay khi mở popup
+if (!window.tabManagerLoaded) {
+    import('./features/tab/tab.js').then(module => {
+        module.initTabManager();
+        window.tabManagerLoaded = true;
+    });
+}
+
+// Event click cho tab
+tabs.forEach(tab => {
+    tab.addEventListener("click", async () => {
+        const target = tab.dataset.tab;
+
+        // hide all contents
+        contents.forEach(c => c.classList.add("hidden"));
+        document.getElementById(target + "-container").classList.remove("hidden");
+
+        // highlight tab
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        // load module lazily
+        if (target === "bookmark" && !window.bookmarkLoaded) {
+            const module = await import('./features/bookmark/bookmark.js');
+            module.initBookmark();
+            window.bookmarkLoaded = true;
+        }
+
+        if (target === "tabmanager" && !window.tabManagerLoaded) {
+            const module = await import('./features/tab/tab.js');
+            module.initTabManager();
+            window.tabManagerLoaded = true;
+        }
+    });
+});

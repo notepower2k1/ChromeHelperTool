@@ -1,0 +1,264 @@
+/* =========================
+   General Reset
+========================= */
+body {
+    background: #eef6f9;
+    font-family: sans-serif;
+}
+
+#bookmark-container {
+    min-width: 700px;
+    min-height: 700px;
+}
+
+#tabmanager-container {
+    min-width: 700px;
+    min-height: 700px;
+}
+/* =========================
+   Tabs
+========================= */
+#tab-bar {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.tab-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.tab-btn.active {
+    border-bottom: 3px solid #4CAF50;
+    font-weight: 600;
+}
+
+.tab-content.hidden {
+    display: none;
+}
+
+
+/* =========================
+   Modal
+========================= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.modal-buttons button {
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    padding: 4px 6px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.modal-buttons button:hover {
+    background: #f1f3f6;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-box input {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+
+/* =========================
+   Groups
+========================= */
+
+.groups-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.group-box {
+    display: flex;
+    flex-direction: column;
+    min-width: 280px;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    background: #f8f9fa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.group-box:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transform: translateY(-2px);
+}
+
+#bookmark-container .group-header {
+    background: linear-gradient(180deg, #e3e6eb 0%, #d3d6db 100%);
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 6px 10px;
+
+    border-bottom: 1px solid #c0c3c7;
+    font-weight: bold;
+    color: #333;
+    user-select: none;
+}
+
+.group-header .group-title {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.group-header-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.group-header .btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.group-header .btn:hover {
+    color: white;
+}
+
+
+#group-select {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+
+/* =========================
+   Toolbar
+========================= */
+
+#toolbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f9f9f9;
+    border-top: 1px solid #ccc;
+    padding: 8px 0px 8px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    /* cho phép xuống dòng khi màn hình nhỏ */
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    /* khoảng cách giữa phần tử */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.toolbar-search {
+    flex: 1 1 200px;
+    /* chiếm tối thiểu 200px, có thể co dãn */
+    min-width: 120px;
+    /* không nhỏ quá */
+}
+
+.toolbar-search input {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.toolbar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    /* cho phép các nút xuống dòng khi cần */
+    gap: 8px;
+    flex: 0 1 auto;
+}
+
+.toolbar-btn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    white-space: nowrap;
+    /* không bị wrap text trong nút */
+}
+
+.toolbar-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Media query cho màn hình rất nhỏ */
+@media (max-width: 480px) {
+    #toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 8px;
+    }
+
+    .toolbar-actions {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Helper Browser Tool",
+    "version": "1.0",
+    "description": "Manage website groups quickly",
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab",
+        "tabGroups"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {}
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}
